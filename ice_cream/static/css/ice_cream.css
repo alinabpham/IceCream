@@ -1,3 +1,12 @@
-h1 a {
+h1 {
+    color: darkorange;
+    font-style: italic;
+    font-family: 'Lobster';
+    padding-left: 15px;
+}
 
+h2 {
+    color: dimgrey;
+    font-style: normal;
+    font-family: Lobster;
 }
