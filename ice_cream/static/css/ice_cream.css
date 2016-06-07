@@ -17,11 +17,22 @@ p {
     color: grey;
 }
 
-
 .img1 {
     padding-right: 15px;
 }
 
 .img2 {
     padding-left: 20px;
+}
+
+.home_title {
+    color: inherit;
+    text-decoration: none;
+    border-style: none;
+}
+
+.home_title:hover {
+    color: inherit;
+    text-decoration: none;
+    border-style: none;
 }

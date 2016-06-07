@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Success</title>
-</head>
-<body>
+{%  extends 'ice_cream/base.html' %}
 
-</body>
-</html>
+{% block order %}
+    <div >
+        <h2>Success!</h2>
+    </div>
+
+    <div>
+        <p> You have successfully ordered your ice cream!</p>
+        <p> An email will arrive shortly with confirmation of your order.</p>
+    </div>
+{% endblock %}

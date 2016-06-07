@@ -47,7 +47,7 @@ def orderview(request):
                       'claires.icecream.order@gmail.com', ['meyer.alexander.john@gmail.com'], fail_silently=False)
 
             # ONCE ORDERED, SHOULD REDIRECT TO ANOTHER PAGE
-            return redirect('/order/success')
+            return redirect('success/')
         else:
             # Should maybe stay at the same page, with some error message? Compromise on this
             form = OrderForm()
