@@ -2,11 +2,26 @@ h1 {
     color: darkorange;
     font-style: italic;
     font-family: 'Lobster';
-    padding-left: 15px;
+    text-align: center;
+    font-size: 80px;
 }
 
 h2 {
     color: dimgrey;
     font-style: normal;
     font-family: Lobster;
+}
+
+p {
+    font-family: "Slabo 13px";
+    color: grey;
+}
+
+
+.img1 {
+    padding-right: 15px;
+}
+
+.img2 {
+    padding-left: 20px;
 }

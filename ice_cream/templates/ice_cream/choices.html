@@ -1,6 +1,6 @@
 {% extends 'ice_cream/base.html' %}
 
-{% block content %}
+{% block choices %}
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -8,8 +8,18 @@
     <title>Choices</title>
 </head>
 <body>
+<!---
+    <div>
+        <h1><a href="{% url 'flavors' pk=option_list.pk %}">{{ option_list.title }}</a></h1>
+    </div>
 
-
+    {% for flavor in optionview %}
+    <div>
+        <h1><a href="">{{ option_list.title }}</a></h1>
+    </div>
+    {% endfor %}
+-->
+    <p>Here are some flavors</p>
 </body>
 </html>
-{% endblock content %}
+{% endblock choices %}

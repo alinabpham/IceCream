@@ -9,7 +9,7 @@ def home_page(request):
     return render(request, 'ice_cream/home_page.html', {})
 
 
-def OrderView(request):
+def orderview(request):
     """
     template_name = 'order.html'
     form_class = OrderForm
@@ -42,7 +42,7 @@ def OrderView(request):
     return render(request, 'ice_cream/order.html', {'form': form})
 
 
-def OptionView(request, option_type):
+def optionview(request, option_type):
 
     type_model_dict = {
         'flavors': Flavor,
