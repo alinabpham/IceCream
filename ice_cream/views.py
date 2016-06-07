@@ -6,7 +6,7 @@ from .models import Flavor, Topping, Container
 
 
 def home_page(request):
-        return render(request, 'ice_cream/home_page.html', {})
+    return render(request, 'ice_cream/home_page.html', {})
 
 
 def OrderView(request):
