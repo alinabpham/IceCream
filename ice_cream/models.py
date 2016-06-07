@@ -22,19 +22,19 @@ class Order(models.Model):
 class Flavor(models.Model):
     flavors = models.CharField(max_length=50)
 
-    def __unicode__(self):
+    def __str__(self):
         return u'{0}'.format(self.flavors)
 
 
 class Topping(models.Model):
     toppings = models.CharField(max_length=50)
 
-    def __unicode__(self):
+    def __str__(self):
         return u'{0}'.format(self.toppings)
 
 
 class Container(models.Model):
     containers = models.CharField(max_length=50)
 
-    def __unicode__(self):
+    def __str__(self):
         return u'{0}'.format(self.containers)

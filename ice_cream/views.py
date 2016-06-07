@@ -3,6 +3,7 @@ from django.views.generic.edit import FormView
 from .forms import OrderForm
 import datetime
 from .models import Flavor, Topping, Container
+from django.core.mail import send_mail
 
 
 def home_page(request):
@@ -25,6 +26,26 @@ def orderview(request):
             order = form.save(commit=False)
             order.order_time = datetime.datetime.now()
             order.save()
+
+            toppings_str = ''
+
+            for topping in form.cleaned_data.get('toppings'):
+                toppings_str += str(topping) + ', '
+
+            # get rid of final comma
+            toppings_str = toppings_str[:-2]
+
+            email_body = 'A new order for ice cream was made by ' + order.name + '.\n\n' + \
+                         'Flavor: ' + order.flavor + '\n' + \
+                         'Container: ' + order.container + '\n'
+
+            # if not empty, show toppings
+            if len(toppings_str) > 0:
+                email_body += 'Toppings: ' + toppings_str
+
+            send_mail('New Order', email_body,
+                      'claires.icecream.order@gmail.com', ['meyer.alexander.john@gmail.com'], fail_silently=False)
+
             # ONCE ORDERED, SHOULD REDIRECT TO ANOTHER PAGE
             return redirect('/order/success')
         else:
