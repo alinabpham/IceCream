@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.edit import FormView
 from .forms import OrderForm
 import datetime
-from .models import Option
+from .models import Flavor, Topping, Container
 
 
 def home_page(request):
@@ -44,11 +44,11 @@ def OrderView(request):
 
 def OptionView(request, option_type):
 
-    def get_options(category):
-        options = Option.objects.values('%s') % category
-        options = options.distinct()
-        options = options.filter(isnull=False).exclude(exact='')
-        return options
+    type_model_dict = {
+        'flavors': Flavor,
+        'toppings': Topping,
+        'containers': Container,
+    }
 
     def get_img_dict(option_list):
         img_dict = dict()
@@ -56,7 +56,7 @@ def OptionView(request, option_type):
         for option in option_list:
             pass
 
-    option_list = get_options(option_type)
+    option_list = type_model_dict(option_type).objects.all()
     option_img_dict = get_img_dict(option_list)
 
     context = {'option_list': option_list, 'image_dict': option_img_dict}

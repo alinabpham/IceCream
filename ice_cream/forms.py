@@ -1,13 +1,13 @@
 from django import forms
-from .models import Order, Option
+from .models import Order, Flavor, Topping, Container
 from django.contrib import admin
-
-FLAVORS = (('peanut', 'peanut'), ('raspberry', 'raspberry'), ('cola', 'cola'))
-TOPPINGS = (('h', 'h'), ('l', 'l'))
-CONTAINERS = (('h', 'h'), ('l', 'l'))
 
 
 class OrderForm(forms.ModelForm):
+
+    flavor = forms.ModelChoiceField(queryset=Flavor.objects.all())
+    toppings = forms.ModelMultipleChoiceField(queryset=Topping.objects.all(), widget=forms.CheckboxSelectMultiple, required=False)
+    container = forms.ModelChoiceField(queryset=Container.objects.all())
 
     class Meta:
         model = Order
@@ -16,15 +16,3 @@ class OrderForm(forms.ModelForm):
     def send_email(self):
         # to send an email
         pass
-
-
-class OptionForm(forms.ModelForm):
-
-    flavors = forms.CharField(max_length=50, required=False)
-    toppings = forms.CharField(max_length=50, required=False)
-    containers = forms.CharField(max_length=50, required=False)
-
-    class Meta:
-        model = Option
-        fields = ('flavors', 'toppings', 'containers')
-
