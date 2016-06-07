@@ -26,7 +26,7 @@ def orderview(request):
             order.order_time = datetime.datetime.now()
             order.save()
             # ONCE ORDERED, SHOULD REDIRECT TO ANOTHER PAGE
-            return redirect('/order/success')
+            return redirect('success/')
         else:
             # Should maybe stay at the same page, with some error message? Compromise on this
             form = OrderForm()
