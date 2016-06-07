@@ -24,12 +24,3 @@ class Option(models.Model):
     flavors = models.CharField(max_length=50)
     toppings = models.CharField(max_length=50)
     containers = models.CharField(max_length=50)
-
-"""
-class OptionFormAdmin(admin.ModelAdmin):
-    fields = ('flavors', 'toppings', 'containers',)
-    list_display = ('flavors', 'toppings', 'containers',)
-    form = OptionForm
-
-admin.site.register(Option, OptionFormAdmin)
-"""

@@ -28,4 +28,3 @@ class OptionForm(forms.ModelForm):
         model = Option
         fields = ('flavors', 'toppings', 'containers')
 
-

@@ -2,10 +2,11 @@ from django.shortcuts import render, redirect
 from django.views.generic.edit import FormView
 from .forms import OrderForm
 import datetime
+from .models import Option
 
 
 def home_page(request):
-        return render(request, 'ice_cream/home_page.html', {})
+    return render(request, 'ice_cream/home_page.html', {})
 
 
 def OrderView(request):
@@ -39,3 +40,25 @@ def OrderView(request):
     """
 
     return render(request, 'ice_cream/order.html', {'form': form})
+
+
+def OptionView(request, option_type):
+
+    def get_options(category):
+        options = Option.objects.values('%s') % category
+        options = options.distinct()
+        options = options.filter(isnull=False).exclude(exact='')
+        return options
+
+    def get_img_dict(option_list):
+        img_dict = dict()
+
+        for option in option_list:
+            pass
+
+    option_list = get_options(option_type)
+    option_img_dict = get_img_dict(option_list)
+
+    context = {'option_list': option_list, 'image_dict': option_img_dict}
+    #how to make this path just choices?
+    return render(request, 'ice_cream/choices.html', context)
