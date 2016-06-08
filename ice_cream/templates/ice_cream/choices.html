@@ -2,8 +2,6 @@
 {% load staticfiles %}
 {% block content %}
 
-
-
     <div class="page" style="">
         <h1> {{ option_type_cap }}</h1>
         <h2> {{ tagline }}</h2>
@@ -18,7 +16,7 @@
                 </div>
             {% endif %}
             <div>
-                <img src="{{ img_dict.option }}">
+                <img src="{{ img_dict.option.url }}">
             </div>
             <div>
                 <h3>{{ option }}</h3>
