@@ -36,3 +36,9 @@ p {
     text-decoration: none;
     border-style: none;
 }
+
+.error {
+    color: orangered;
+    font-family: "Lobster";
+    font-size: 20px;
+}

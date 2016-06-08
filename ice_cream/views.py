@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic.edit import FormView
+from django import forms
 from .forms import OrderForm
 import datetime
 from .models import Flavor, Topping, Container
@@ -17,10 +17,9 @@ def orderview(request):
     success_url = '/thanks/'
 
     """
-    if request.method == "POST":
-        form = OrderForm(request.POST)
+    form = OrderForm(request.POST or None)
 
-    #there may be some sort of errors attribute or raise error method for redirecting
+    if request.method == "POST":
 
         if form.is_valid():
             order = form.save(commit=False)
@@ -43,22 +42,15 @@ def orderview(request):
             if len(toppings_str) > 0:
                 email_body += 'Toppings: ' + toppings_str
 
-            send_mail('New Order', email_body,
-                      'claires.icecream.order@gmail.com', ['meyer.alexander.john@gmail.com'], fail_silently=False)
+            send_mail('New Order',
+                      email_body,
+                      'claires.icecream.order@gmail.com',
+                      ['meyer.alexander.john@gmail.com'],
+                      fail_silently=False
+                    )
 
-            # ONCE ORDERED, SHOULD REDIRECT TO ANOTHER PAGE
+            # once ordered, redirect
             return redirect('success/')
-        else:
-            # Should maybe stay at the same page, with some error message? Compromise on this
-            form = OrderForm()
-    else:
-        form = OrderForm()
-
-    """
-    def form_valid(self, form):
-        form.send_email
-        return super(OrderView, self).form_valid(form)
-    """
 
     return render(request, 'ice_cream/order.html', {'form': form})
 

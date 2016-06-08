@@ -1,6 +1,13 @@
 {%  extends 'ice_cream/base.html' %}
 
 {% block order %}
+
+    {% if form.errors %}
+        <div class="error">
+            <strong>Missing field. Every field is required but toppings.</strong>
+        </div>
+    {% endif %}
+
     <div >
         <h2>Create Your Ice Cream</h2>
     </div>
