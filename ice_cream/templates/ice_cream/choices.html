@@ -3,25 +3,28 @@
 {% block content %}
 
     <div class="page" style="">
-        <h1> {{ option_type_cap }}</h1>
+        <h4> {{ option_type_cap }}</h4>
         <h2> {{ tagline }}</h2>
         <div>
             <p>Here are our {{ option_type }}:</p>
         </div>
-
-        {% for option in option_list %}
-            {% if img_dict.option %}
-                <div>
-                    <img src="{{ img_dict.option }}">
-                </div>
-            {% endif %}
-            <div>
-                <img src="{{ img_dict.option.url }}">
-            </div>
-            <div>
-                <h3>{{ option }}</h3>
-            </div>
-        {% endfor %}
+        <div>
+            <span>
+                {% for option in option_list %}
+                    {% if img_dict.option %}
+                        <div>
+                            <img src="{{ img_dict.option }}">
+                        </div>
+                    {% endif %}
+                    <div>
+                        <img src="{{ img_dict.option.url }}">
+                    </div>
+                    <div>
+                        <h3>{{ option }}</h3>
+                    </div>
+                {% endfor %}
+            </span>
+        </div>
     </div>
 
 {% endblock %}
