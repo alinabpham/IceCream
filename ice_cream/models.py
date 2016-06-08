@@ -19,25 +19,27 @@ class Order(models.Model):
 
 
 class Flavor(models.Model):
-    flavors = models.CharField(max_length=50)
+    flavor = models.CharField(max_length=50)
+    image = models.ImageField(upload_to="static/images/flavors")
 
     def __str__(self):
-        return u'{0}'.format(self.flavors)
+        return u'{0}'.format(self.flavor)
 
 
 class Topping(models.Model):
-    toppings = models.CharField(max_length=50)
+    topping = models.CharField(max_length=50)
 
     def __str__(self):
-        return u'{0}'.format(self.toppings)
+        return u'{0}'.format(self.topping)
 
 
 class Container(models.Model):
-    containers = models.CharField(max_length=50)
+    container = models.CharField(max_length=50)
 
     def __str__(self):
-        return u'{0}'.format(self.containers)
+        return u'{0}'.format(self.container)
 
-
-class Image(models.Model):
-    pass
+"""
+class FlavorImage(models.Model):
+    flavor = models.OneToOneField('Flavor', related_name='images')
+"""

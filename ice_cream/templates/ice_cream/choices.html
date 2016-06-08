@@ -5,13 +5,21 @@
 
 
     <div class="page" style="">
-        <h1> {{ option_type }}</h1>
+        <h1> {{ option_type_cap }}</h1>
         <h2> {{ tagline }}</h2>
         <div>
-            <p>Here are some {{ option_type }}:</p>
+            <p>Here are our {{ option_type }}:</p>
         </div>
 
         {% for option in option_list %}
+            {% if img_dict.option %}
+                <div>
+                    <img src="{{ img_dict.option }}">
+                </div>
+            {% endif %}
+            <div>
+                <img src="{{ img_dict.option }}">
+            </div>
             <div>
                 <h3>{{ option }}</h3>
             </div>
