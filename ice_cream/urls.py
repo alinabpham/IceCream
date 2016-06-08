@@ -6,6 +6,6 @@ urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='ice_cream/home_page.html')),
     url(r'^order/$', views.orderview, name='order_view'),
     url(r'^order/success/$', TemplateView.as_view(template_name='ice_cream/success.html')),
-    url(r'^options/(?P<option_type>\w+)/$', views.optionview, name='option_view')
+    url(r'^options/(?P<option_type>\w+)$', views.optionview, name='option_view')
 
 ]
