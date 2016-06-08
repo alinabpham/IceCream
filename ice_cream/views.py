@@ -72,15 +72,33 @@ def optionview(request, option_type):
         'containers': Container,
     }
 
-    def get_img_dict(option_list):
-        img_dict = dict()
+    type_tagline_dict = {
+        'flavors': 'Flavors to Savor',
+        'toppings': "Poppin' Toppin's",
+        'containers': 'No-Brainer Containers'
+    }
 
-        for option in option_list:
-            pass
+    def get_context_data():
 
-    option_list = type_model_dict(option_type).objects.all()
-    option_img_dict = get_img_dict(option_list)
+        context = {}
+        context['option_type'] = option_type.capitalize()
 
-    context = {'option_list': option_list, 'image_dict': option_img_dict}
+        def get_img_dict(option_list):
+            img_dict = dict()
+
+            for option in option_list:
+                pass
+
+        def get_tagline(option_type):
+            return type_tagline_dict[option_type]
+
+        option_list = type_model_dict[option_type].objects.all()
+        context['option_list'] = option_list
+        context['image_dict'] = get_img_dict(option_list)
+        context['tagline'] = get_tagline(option_type)
+
+        return context
+
+    context = get_context_data()
     #how to make this path just choices?
     return render(request, 'ice_cream/choices.html', context)

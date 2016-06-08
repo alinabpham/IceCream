@@ -1,86 +1,21 @@
 {% extends 'ice_cream/base.html' %}
 {% load staticfiles %}
-{% block choices %}
+{% block content %}
 
-    <head>
-        <script>
-            // show the given page, hide the rest
-            function show(elementID) {
-                // try to find the requested page and alert if it's not found
-                var ele = document.getElementById(elementID);
-                if (!ele) {
-                    alert("no such element");
-                    return;
-                }
 
-                // get all pages, loop through them and hide them
-                var pages = document.getElementsByClassName('page');
-                for(var i = 0; i < pages.length; i++) {
-                    pages[i].style.display = 'none';
-                }
 
-                // then show the requested page
-                ele.style.display = 'block';
-            }
-        </script>
-    </head>
-    <body>
-      <p>
-        See more:
-            <span onclick="show('FlavorPage');">Flavors</span>,
-            <span onclick="show('ToppingPage');">Toppings</span>,
-            <span onclick="show('ContainerPage');">Containers</span>.
-        </p>
-
-    <div id="FlavorPage" class="page" style="">
-        <h2>Flavors to Savor</h2>
+    <div class="page" style="">
+        <h1> {{ option_type }}</h1>
+        <h2> {{ tagline }}</h2>
         <div>
-            <p>Here are some flavors</p>
-        </div>
-
-        <div>
-            <h1><a href="{% url 'flavors' pk=option_list.pk %}">{{ option_list.title }}</a></h1>
+            <p>Here are some {{ option_type }}:</p>
         </div>
 
         {% for option in option_list %}
-        <div>
-            <h1><a href="">{{ option_list.title }}</a></h1>
-        </div>
+            <div>
+                <h3>{{ option }}</h3>
+            </div>
         {% endfor %}
     </div>
-    <div id="ToppingPage" class="page" style="display:none">
-        <h2>Poppin' Toppin's</h2>
-        <div>
-            <p>Here are some toppings</p>
-        </div>
-
-        <div>
-            <h1><a href="{% url 'toppings' pk=option_list.pk %}">{{ option_list.title }}</a></h1>
-        </div>
-
-        {% for option in option_list %}
-        <div>
-            <h1><a href="">{{ option_list.title }}</a></h1>
-        </div>
-        {% endfor %}
-    </div>
-    <div id="ContainerPage" class="page" style="display:none">
-        <h2>No Brainer Containers</h2>
-        <div>
-            <p>Here are some containers</p>
-        </div>
-
-        <div>
-            <h1><a href="{% url 'containers' pk=option_list.pk %}">{{ option_list.title }}</a></h1>
-        </div>
-
-        {% for option in option_list %}
-        <div>
-            <h1><a href="">{{ option_list.title }}</a></h1>
-        </div>
-        {% endfor %}
-    </div>
-
-    </body>
 
 {% endblock %}
