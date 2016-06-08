@@ -1,6 +1,5 @@
 from django import forms
 from .models import Order, Flavor, Topping, Container
-from django.contrib import admin
 
 
 class OrderForm(forms.ModelForm):
@@ -12,7 +11,3 @@ class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
         fields = ('flavor', 'toppings', 'container', 'name', 'address', 'phone', 'email',)
-
-    def send_email(self):
-        # to send an email
-        pass
