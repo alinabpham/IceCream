@@ -48,3 +48,10 @@ p {
     font-family: "Lobster";
     font-size: 20px;
 }
+
+.img3 {
+    display: inline;
+    align: middle;
+    margin: 1em;
+    padding: 20px 20px;
+}
