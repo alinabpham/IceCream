@@ -1,17 +1,60 @@
 {% extends 'ice_cream/base.html' %}
 
 {% block choices %}
-    <div>
-        <p>Here are some flavors</p>
+
+    <head>
+        <script>
+            // show the given page, hide the rest
+            function show(elementID) {
+                // try to find the requested page and alert if it's not found
+                var ele = document.getElementById(elementID);
+                if (!ele) {
+                    alert("no such element");
+                    return;
+                }
+
+                // get all pages, loop through them and hide them
+                var pages = document.getElementsByClassName('page');
+                for(var i = 0; i < pages.length; i++) {
+                    pages[i].style.display = 'none';
+                }
+
+                // then show the requested page
+                ele.style.display = 'block';
+            }
+        </script>
+    </head>
+    <body>
+      <p>
+        Show page
+            <span onclick="show('FlavorPage');">1</span>,
+            <span onclick="show('ToppingPage');">2</span>,
+            <span onclick="show('ContainerPage');">3</span>.
+        </p>
+
+    <div id="FlavorPage" class="page" style="">
+        Content of flavors page
+        <div>
+            <p>Here are some flavors</p>
+        </div>
+
+        <div>
+            <h1><a href="{% url 'flavors' pk=option_list.pk %}">{{ option_list.title }}</a></h1>
+        </div>
+
+        {% for option in option_list %}
+        <div>
+            <h1><a href="">{{ option_list.title }}</a></h1>
+        </div>
+        {% endfor %}
+    </div>
+    <div id="ToppingPage" class="page" style="display:none">
+        Content of page 2
+    </div>
+    <div id="ContainerPage" class="page" style="display:none">
+        Content of page 3
     </div>
 
-    <div>
-        <h1><a href="{% url 'flavors' pk=option_list.pk %}">{{ option_list.title }}</a></h1>
-    </div>
+    </body>
 
-    {% for option in option_list %}
-    <div>
-        <h1><a href="">{{ option_list.title }}</a></h1>
-    </div>
-    {% endfor %}
-{% endblock choices %}
+{% endblock %}
