@@ -20,7 +20,7 @@ class Order(models.Model):
 
 class Flavor(models.Model):
     flavor = models.CharField(max_length=50)
-    image = models.ImageField(upload_to="static/images/flavors")
+    image = models.ImageField(upload_to="images/flavors")
 
     def __str__(self):
         return u'{0}'.format(self.flavor)
