@@ -9,11 +9,14 @@ body {
 }
 
 .page-header {
+    background-color: lightskyblue;
+    margin-top: 0;
+    padding: 5px 5px 5px 5px;
     text-align: center;
 }
 
 h1 {
-    color: darkorange;
+    color: white;
     font-style: italic;
     font-family: 'Lobster';
     font-size: 80px;
@@ -23,7 +26,7 @@ h2 {
     color: dimgrey;
     font-style: normal;
     font-family: Lobster;
-    font-size: 35px;
+    font-size: 38px;
     width:100%;
 }
 
@@ -31,19 +34,20 @@ h3 {
     display: inline-block;
     font-family: "Slabo 13px";
     color: grey;
-    font-size: 20px;
+    font-size: 25px;
     width:100%;
 }
 
 h4 {
-    color: cornflowerblue;
+    color: #F5903D;
     font-style: italic;
     font-family: 'Lobster';
-    font-size: 60px
+    font-size: 67px
 }
 
 p {
     font-family: "Slabo 13px";
+    font-size: 20px;
     color: grey;
     width:100%;
 }
