@@ -14,6 +14,9 @@ class Order(models.Model):
     email = models.CharField(max_length=50)
     order_time = models.DateTimeField(blank=True)
 
+    def __str__(self):
+        return 'Order date: ' + str(self.order_time)
+
 
 class Flavor(models.Model):
     flavors = models.CharField(max_length=50)

@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="{% static 'css/ice_cream.css' %}">
 </head>
 <body>
-    <div class="page-header">
+    <div id="page-wrap">
+        <div class="page-header">
         <span>
             <h1>
                 <img src="{% static 'ICpics/icecream2.jpg' %}" class="img1" alt="some ice cream" width="135px" height="80px"/>
@@ -20,20 +21,21 @@
                 <img src="{% static 'ICpics/icecream2.jpg' %}" class="img2" alt="some ice cream" width="145px" height="80px"/>
             </h1>
         </span>
-    </div>
-    <div class="content container">
-        <div class="row1">
-            <div class="col-md-10">
-            {% block content %}
-            {% endblock %}
+        </div>
+        <div class="content container">
+            <div class="row1">
+                <div class="col-md-10">
+                {% block content %}
+                {% endblock %}
+                </div>
             </div>
         </div>
-    </div>
-    <div class="content container">
-        <div class="row2">
-            <div class="col-md-10">
-            {% block order %}
-            {% endblock %}
+        <div class="content container">
+            <div class="row2">
+                <div class="col-md-10">
+                {% block order %}
+                {% endblock %}
+                </div>
             </div>
         </div>
     </div>
