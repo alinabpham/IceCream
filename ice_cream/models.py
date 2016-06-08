@@ -5,11 +5,8 @@ from django.contrib import admin
 
 
 class Order(models.Model):
-
     name = models.CharField(max_length=50)
-    # Put as separate categories?
     address = models.CharField(max_length=100)
-
     flavor = models.CharField(max_length=50)
     toppings = models.CharField(max_length=500)
     container = models.CharField(max_length=50)
@@ -37,3 +34,7 @@ class Container(models.Model):
 
     def __str__(self):
         return u'{0}'.format(self.containers)
+
+
+class Image(models.Model):
+    pass

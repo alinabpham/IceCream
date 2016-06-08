@@ -31,15 +31,22 @@ def send_email_to_customer(body, name, to_email):
 
 def orderview(request):
 
-    def make_order_body():
+    def get_topping_str():
         toppings_str = ''
 
         for topping in form.cleaned_data.get('toppings'):
             toppings_str += str(topping) + ', '
         toppings_str = toppings_str[:-2]
 
+        return toppings_str
+
+    def make_order_body():
+
         order_body = 'Flavor: ' + order.flavor + '\n' + \
                      'Container: ' + order.container
+
+        toppings_str = get_topping_str()
+
         # if not empty, show toppings
         if len(toppings_str) > 0:
             order_body += '\n' + 'Toppings: ' + toppings_str
@@ -52,6 +59,7 @@ def orderview(request):
         if form.is_valid():
             order = form.save(commit=False)
             order.order_time = datetime.datetime.now()
+            order.toppings = get_topping_str()
             order.save()
 
             body = make_order_body()
