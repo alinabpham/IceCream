@@ -43,3 +43,4 @@ class Container(models.Model):
 class FlavorImage(models.Model):
     flavor = models.OneToOneField('Flavor', related_name='images')
 """
+
