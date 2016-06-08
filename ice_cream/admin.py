@@ -5,7 +5,7 @@ model_list = [Flavor, Topping, Container]
 
 
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ('order_time', 'name', 'flavor')
+    list_display = ('name', 'flavor', 'order_time')
     list_filter = ['order_time', 'name', 'flavor']
 
 admin.site.register(Order, OrderAdmin)
