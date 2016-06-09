@@ -33,7 +33,6 @@ def orderview(request):
 
     def get_topping_str():
         toppings_str = ''
-
         for topping in form.cleaned_data.get('toppings'):
             toppings_str += str(topping) + ', '
         toppings_str = toppings_str[:-2]
@@ -41,12 +40,9 @@ def orderview(request):
         return toppings_str
 
     def make_order_body():
-
         order_body = 'Flavor: ' + order.flavor + '\n' + \
                      'Container: ' + order.container
-
         toppings_str = get_topping_str()
-
         # if not empty, show toppings
         if len(toppings_str) > 0:
             order_body += '\n' + 'Toppings: ' + toppings_str
