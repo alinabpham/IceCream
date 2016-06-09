@@ -146,7 +146,6 @@ p {
     vertical-align: middle;
 }
 
-.order_gifs {
-    float: right;
-    text-align: center;
+.order_layout {
+    display: inline-block;
 }
