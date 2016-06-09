@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^order/$', views.orderview, name='order_view'),
     url(r'^order/success/$', TemplateView.as_view(template_name='ice_cream/success.html')),
     url(r'^options/(?P<option_type>\w+)/$', views.optionview, name='option_view'),
-    ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

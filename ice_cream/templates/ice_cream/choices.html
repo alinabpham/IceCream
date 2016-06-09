@@ -4,11 +4,12 @@
 {% block content %}
 
     <div class="page" style="">
-        <h1> {{ option_type_cap }}</h1>
+        <h4> {{ option_type_cap }}</h4>
         <h2> {{ tagline }}</h2>
         <div>
             <p>Here are our {{ option_type }}:</p>
         </div>
+
 
         {% for option in option_list %}
             <div> {{ option.0 }}</div>
