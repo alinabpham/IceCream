@@ -12,8 +12,8 @@
 }
 
 .pages_margin {
-    margin-left: 300px;
-    margin-right: 300px;
+    margin-left: 200px;
+    margin-right: 200px;
 }
 
 a.page_link {
@@ -61,7 +61,7 @@ h4 {
     font-family: "Lobster";
     font-size: 67px;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 h5 {
@@ -103,10 +103,10 @@ p {
 
 .error {
     color: orangered;
-    font-family: "Slabo 13px";
+    font-family: "Lobster";
     font-size: 20px;
     width:100%;
-    style:"margin-left: 100px"
+    margin-bottom: 20px;
 }
 
 .success_image {
@@ -125,11 +125,10 @@ p {
     width: 300px;
     margin-right: 40px;
     display: inline-block;
-    text-align: center
+    text-align: center;
 }
 
 .option_container img {
     max-width: 100%;
     max-height: 80%;
-    vertical-align: middle;
 }
