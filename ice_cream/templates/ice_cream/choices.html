@@ -8,8 +8,7 @@
         <h2 style="text-align: center"> {{ tagline }}</h2>
         <div style="text-align: center">
             {% for option in option_list %}
-                <div class="option_container">
-                    <img src="{{ MEDIA_URL }}{{ option.1 }}">
+                <div class="option_container"><span class="Centerer"></span><span class='Centered'><img src="{{ MEDIA_URL }}{{ option.1 }}"></span>
                     <h3> {{ option.0 }}</h3>
                 </div>
             {% endfor %}
