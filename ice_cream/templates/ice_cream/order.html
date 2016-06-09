@@ -2,27 +2,27 @@
 {% load staticfiles %}
 {% block content %}
     <div class="pages_margin">
+        <div>
+            <h2 style="text-align: center; font-size: 40px">Create Your Ice Cream</h2>
+        </div>
         {% if form.errors %}
             <div class="error">
                 <strong>Incorrect or missing field. Every field is required but toppings.</strong>
             </div>
         {% endif %}
-
-        <div >
-            <h2>Create Your Ice Cream</h2>
-        </div>
-
         <div>
             <form method="POST" class="post-form" style="float: left">{% csrf_token %}
                 {{ form.as_p }}
                 <button type="submit" class="save btn btn-default">Save</button>
             </form>
-            <div style="float: right; margin-right: 20px; margin-bottom: 50px">
+            <div style="float: right; margin-bottom: 40px">
                 <img src="../../media/images/ICpics/eat2.gif" height="130 px">
                 <img src="../../media/images/ICpics/eat1.gif" height="130 px">
             </div>
-            <div style="float: right">
+            <div style="float: right; margin-bottom: 40px; margin-right: 100px">
                 <img src="../../media/images/ICpics/eat3.gif" height="130 px">
+            </div>
+            <div style="float: right; margin-right: 100px">
                 <img src="../../media/images/ICpics/eat4.gif" height="130 px">
             </div>
         </div>
