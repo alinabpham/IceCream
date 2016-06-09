@@ -1,5 +1,6 @@
 {% extends 'ice_cream/base.html' %}
 {% load staticfiles %}
+
 {% block content %}
 
     <div class="page" style="">
@@ -11,16 +12,9 @@
         <div>
             <div style="display: inline-block; padding: 10px 10px 10px 10px;" >
                 {% for option in option_list %}
-                    {% if img_dict.option %}
-                        <div>
-                            <img src="{{ img_dict.option }}">
-                        </div>
-                    {% endif %}
+                    <div> {{ option.0 }}</div>
                     <div>
-                        <img src="{{ img_dict.option.url }}">
-                    </div>
-                    <div>
-                        <h3>{{ option }}</h3>
+                      <img src="{{ MEDIA_URL }}{{ option.1 }}">
                     </div>
                 {% endfor %}
             </div>

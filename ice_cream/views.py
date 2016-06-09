@@ -88,25 +88,21 @@ def optionview(request, option_type):
 
     def get_context_data():
 
-        context = dict()
-        context['option_type'] = option_type
-        context['option_type_cap'] = option_type.capitalize()
-
-        def get_img_dict(option_list):
-            img_dict = dict()
-
-            for option in option_list:
-                img_dict[option] = option.image
-
-            return img_dict
-
         def get_tagline(option_type):
             return type_tagline_dict[option_type]
 
-        option_list = type_model_dict[option_type].objects.all()
-        context['option_list'] = option_list
-        context['img_dict'] = get_img_dict(option_list)
+        context = dict()
+        context['option_type'] = option_type
+        context['option_type_cap'] = option_type.capitalize()
         context['tagline'] = get_tagline(option_type)
+
+        option_qs = type_model_dict[option_type].objects.all()
+
+        option_list = []
+        for option in option_qs:
+            option_list.append((str(option), str(option.image)))
+
+        context['option_list'] = option_list
 
         return context
 
