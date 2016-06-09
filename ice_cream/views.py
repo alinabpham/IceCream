@@ -10,7 +10,7 @@ def send_email_to_claire(body, name):
     send_mail('New Order',
               email_body,
               'claires.icecream.order@gmail.com',
-              ['meyer.alexander.john@gmail.com'],
+              ['tech@mighty.com'],
               fail_silently=False
               )
 
