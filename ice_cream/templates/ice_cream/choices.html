@@ -3,18 +3,18 @@
 
 {% block content %}
 
-    <div class="page" style="">
+    <div class="page">
         <h4> {{ option_type_cap }}</h4>
         <h2> {{ tagline }}</h2>
         <div>
             <p>Here are our {{ option_type }}:</p>
         </div>
         <div>
-            <div style="display: inline-block; padding: 10px 10px 10px 10px;" >
+            <div>
                 {% for option in option_list %}
-                    <div> {{ option.0 }}</div>
-                    <div>
-                      <img src="{{ MEDIA_URL }}{{ option.1 }}">
+                    <div class="floated_img">
+                        <img src="{{ MEDIA_URL }}{{ option.1 }}" height="150px" width="115px">
+                        <h3> {{ option.0 }}</h3>
                     </div>
                 {% endfor %}
             </div>

@@ -15,10 +15,6 @@ body {
     text-align: center;
 }
 
-.page-body {
-
-}
-
 h1 {
     color: white;
     font-style: italic;
@@ -95,4 +91,9 @@ p {
     display: inline-block;
     margin: 1em;
     padding: 20px 20px;
+}
+
+.floated_img
+{
+    float: left;
 }
