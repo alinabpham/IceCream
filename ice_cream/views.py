@@ -1,14 +1,12 @@
 from django.shortcuts import render, redirect
-from django import forms
+from django.core.mail import send_mail
+from .models import Flavor, Topping, Container
 from .forms import OrderForm
 import datetime
-from .models import Flavor, Topping, Container
-from django.core.mail import send_mail
 
 
 def send_email_to_claire(body, name):
-    email_body = 'A new order for ice cream was made by ' + name + '.\n\n' + \
-                body
+    email_body = 'A new order for ice cream was made by ' + name + '.\n\n' + body
     send_mail('New Order',
               email_body,
               'claires.icecream.order@gmail.com',
@@ -102,5 +100,4 @@ def optionview(request, option_type):
         return context
 
     context = get_context_data()
-    # how to make this path just choices?
     return render(request, 'ice_cream/choices.html', context)
