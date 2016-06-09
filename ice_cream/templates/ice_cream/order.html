@@ -13,10 +13,18 @@
     </div>
 
     <div>
-        <form method="POST" class="post-form">{% csrf_token %}
+        <form method="POST" class="post-form" style="float: left">{% csrf_token %}
             {{ form.as_p }}
             <button type="submit" class="save btn btn-default">Save</button>
         </form>
+        <div style="float: right">
+            <img src="../../media/images/ICpics/eat2.gif" height="130 px">
+            <img src="../../media/images/ICpics/eat1.gif" height="130 px">
+        </div>
+        <div style="float: right">
+            <img src="../../media/images/ICpics/eat3.gif" height="130 px">
+            <img src="../../media/images/ICpics/eat4.gif" height="130 px">
+        </div>
     </div>
 {% endblock %}
 

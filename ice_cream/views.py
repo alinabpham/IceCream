@@ -111,5 +111,5 @@ def optionview(request, option_type):
         return context
 
     context = get_context_data()
-    #how to make this path just choices?
+    # how to make this path just choices?
     return render(request, 'ice_cream/choices.html', context)

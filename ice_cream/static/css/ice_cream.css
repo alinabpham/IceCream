@@ -15,6 +15,10 @@ body {
     text-align: center;
 }
 
+.page-body {
+
+}
+
 h1 {
     color: white;
     font-style: italic;
@@ -42,7 +46,8 @@ h4 {
     color: #F5903D;
     font-style: italic;
     font-family: 'Lobster';
-    font-size: 67px
+    font-size: 67px;
+    text-align: center;
 }
 
 p {
@@ -77,11 +82,13 @@ p {
     font-family: "Slabo 13px";
     font-size: 20px;
     width:100%;
+    style:"margin-left: 100px"
 }
 
 .success {
     text-align: center;
     width:100%;
+    padding-left: 100px;
 }
 
 .img3 {

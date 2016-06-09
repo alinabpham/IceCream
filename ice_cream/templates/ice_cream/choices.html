@@ -9,7 +9,7 @@
             <p>Here are our {{ option_type }}:</p>
         </div>
         <div>
-            <span>
+            <div style="display: inline-block; padding: 10px 10px 10px 10px;" >
                 {% for option in option_list %}
                     {% if img_dict.option %}
                         <div>
@@ -23,7 +23,7 @@
                         <h3>{{ option }}</h3>
                     </div>
                 {% endfor %}
-            </span>
+            </div>
         </div>
     </div>
 

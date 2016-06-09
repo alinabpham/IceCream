@@ -16,25 +16,27 @@
         <div class="page-header">
         <span>
             <h1>
-                <img src="{% static 'ICpics/icecream4.png' %}" class="img1" alt="some ice cream" height="125px"/>
+                <img src="../../media/images/ICpics/icecream4.png" class="img1" alt="some ice cream" height="125px"/>
                 <a href="/" class="home_title">Claire's Creamery</a>
-                <img src="{% static 'ICpics/icecream4.png' %}" class="img2" alt="some ice cream" height="125px"/>
+                <img src="../../media/images/ICpics/icecream4.png" class="img2" alt="some ice cream" height="125px"/>
             </h1>
         </span>
         </div>
-        <div class="content container">
-            <div class="row1">
-                <div class="col-md-10">
-                {% block content %}
-                {% endblock %}
+        <div id="page-body" style="margin-left: 200px">
+            <div class="content container">
+                <div class="row1">
+                    <div class="col-md-10">
+                    {% block content %}
+                    {% endblock %}
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="content container">
-            <div class="row2">
-                <div class="col-md-10">
-                {% block order %}
-                {% endblock %}
+            <div class="content container">
+                <div class="row2">
+                    <div class="col-md-10">
+                    {% block order %}
+                    {% endblock %}
+                    </div>
                 </div>
             </div>
         </div>
