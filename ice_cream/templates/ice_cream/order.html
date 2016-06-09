@@ -2,14 +2,14 @@
 {% load staticfiles %}
 {% block content %}
     <div class="pages_margin">
-        <div>
-            <h2 style="text-align: center; font-size: 40px">Create Your Ice Cream</h2>
-        </div>
         {% if form.errors %}
             <div class="error">
                 <strong>Incorrect or missing field. Every field is required but toppings.</strong>
             </div>
         {% endif %}
+        <div>
+            <h2 style="text-align: center; font-size: 40px">Create Your Ice Cream</h2>
+        </div>
         <div>
             <form method="POST" class="post-form" style="float: left">{% csrf_token %}
                 {{ form.as_p }}
