@@ -12,7 +12,7 @@
     <link rel="icon" href="https://pixabay.com/static/uploads/photo/2014/04/03/00/39/ice-cream-308972_960_720.png">
     <link rel="stylesheet" href="{% static 'css/ice_cream.css' %}">
 </head>
-<body style="min-width: 960px; margin-bottom: 100px;">
+<body style="min-width: 960px; margin-bottom: 25px;">
     <div id="page-wrap">
         <div class="page-header">
             <span>
@@ -33,6 +33,11 @@
         <div>
             {% block content %}
             {% endblock %}
+        </div>
+        <div class="contact_info" style="margin-top: 75px">
+            <p style="color: dimgray; font-size: 15px; text-align: center">
+                Contact us: tech@mighty.com
+            </p>
         </div>
     </div>
 </body>
