@@ -11,6 +11,14 @@
     text-align: center;
 }
 
+.pages_tab {
+    display: inline;
+}
+
+.pages_margin {
+    margin-left: 200px
+}
+
 h1 {
     color: white;
     font-style: italic;
@@ -43,6 +51,20 @@ h4 {
     text-align: center;
 }
 
+li {
+    color: dimgrey;
+    font-style: normal;
+    font-family: Lobster;
+    font-size: 30px;
+    width:100%;
+}
+
+li:hover {
+    color: inherit;
+    text-decoration: none;
+    border-style: none;
+}
+
 p {
     font-family: "Slabo 13px";
     font-size: 20px;
@@ -50,11 +72,11 @@ p {
     width:100%;
 }
 
-.img1 {
+.header_img_left {
     padding-right: 15px;
 }
 
-.img2 {
+.header_img_right {
     padding-left: 20px;
 }
 
@@ -78,13 +100,7 @@ p {
     style:"margin-left: 100px"
 }
 
-.success {
-    text-align: center;
-    width:100%;
-    padding-left: 100px;
-}
-
-.img3 {
+.success_image {
     display: inline-block;
     margin: 1em;
     padding: 20px 20px;
@@ -93,10 +109,6 @@ p {
 .floated_img
 {
     float: left;
-}
-
-.pages_tab {
-    margin-left: 200px
 }
 
 .option_container {

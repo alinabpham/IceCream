@@ -16,11 +16,18 @@
         <div class="page-header">
             <span>
                 <h1>
-                    <img src="../../media/images/ICpics/icecream4.png" class="img1" alt="some ice cream" height="125px"/>
+                    <img src="../../media/images/ICpics/icecream4.png" class="header_img_left" alt="some ice cream" height="125px"/>
                     <a href="/" class="home_title">Claire's Creamery</a>
-                    <img src="../../media/images/ICpics/icecream4.png" class="img2" alt="some ice cream" height="125px"/>
+                    <img src="../../media/images/ICpics/icecream4.png" class="header_img_right" alt="some ice cream" height="125px"/>
                 </h1>
             </span>
+        </div>
+        <div class="pages_tab">
+            <ul style="display: inline">
+                <li><a href="{% url 'options/flavors' %}">Flavors</a></li>
+                <li><a href="{% url 'options/toppings' %}">Toppings</a></li>
+                <li><a href="{% url 'options/containers' %}">Containers</a></li>
+            </ul>
         </div>
         <div>
             {% block content %}
