@@ -97,3 +97,17 @@ p {
 {
     float: left;
 }
+
+.option_container {
+    height: 300px;
+    width: 300px;
+    margin-right: 40px;
+    display: inline-block;
+    text-align: center
+}
+
+.option_container img {
+    max-width: 100%;
+    max-height: 80%;
+    vertical-align: middle;
+}

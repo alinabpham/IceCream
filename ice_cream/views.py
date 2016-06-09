@@ -92,7 +92,6 @@ def optionview(request, option_type):
             return type_tagline_dict[option_type]
 
         context = dict()
-        context['option_type'] = option_type
         context['option_type_cap'] = option_type.capitalize()
         context['tagline'] = get_tagline(option_type)
 
