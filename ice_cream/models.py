@@ -28,6 +28,7 @@ class Flavor(models.Model):
 
 class Topping(models.Model):
     topping = models.CharField(max_length=50)
+    image = models.ImageField(upload_to="images/toppings")
 
     def __str__(self):
         return u'{0}'.format(self.topping)
@@ -35,12 +36,8 @@ class Topping(models.Model):
 
 class Container(models.Model):
     container = models.CharField(max_length=50)
+    image = models.ImageField(upload_to="images/containers")
 
     def __str__(self):
         return u'{0}'.format(self.container)
-
-"""
-class FlavorImage(models.Model):
-    flavor = models.OneToOneField('Flavor', related_name='images')
-"""
 
