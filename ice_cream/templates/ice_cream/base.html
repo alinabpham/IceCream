@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link href='https://fonts.googleapis.com/css?family=Slabo+13px' rel='stylesheet' type='text/css'>
     <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
     <link rel="icon" href="https://pixabay.com/static/uploads/photo/2014/04/03/00/39/ice-cream-308972_960_720.png">
     <link rel="stylesheet" href="{% static 'css/ice_cream.css' %}">
 </head>
@@ -22,12 +23,11 @@
                 </h1>
             </span>
         </div>
-        <div class="pages_tab">
-            <ul style="display: inline">
-                <li><a href="/options/flavors">Flavors</a></li>
-                <li><a href="/options/toppings">Toppings</a></li>
-                <li><a href="/options/containers">Containers</a></li>
-            </ul>
+        <div style="text-align: center">
+            <h5><a class="page_link" href="/">Home</a></h5>
+            <h5><a class="page_link" href="/options/flavors">Flavors</a></h5>
+            <h5><a class="page_link" href="/options/toppings">Toppings</a></h5>
+            <h5><a class="page_link" href="/options/containers">Containers</a></h5>
         </div>
         <div>
             {% block content %}

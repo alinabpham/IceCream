@@ -11,12 +11,23 @@
     text-align: center;
 }
 
-.pages_tab {
-    display: inline;
-}
-
 .pages_margin {
     margin-left: 200px
+}
+
+a.page_link {
+    color: inherit;
+}
+
+a.page_link:hover {
+    text-decoration: none;
+    border-style: none;
+    color: lightsalmon;
+    /*
+    left:50%;
+    -webkit-transform:translateX(-50%);
+            transform:translateX(-50%);
+    */
 }
 
 h1 {
@@ -29,8 +40,8 @@ h1 {
 h2 {
     color: dimgrey;
     font-style: normal;
-    font-family: Lobster;
-    font-size: 38px;
+    font-family: "Lobster Two";
+    font-size: 32px;
     width:100%;
     text-align: center;
 }
@@ -44,25 +55,22 @@ h3 {
 }
 
 h4 {
-    color: #F5903D;
-    font-style: italic;
-    font-family: 'Lobster';
+    color: salmon;
+    /*color: #F5903D; */
+    font-family: "Lobster";
     font-size: 67px;
     text-align: center;
+    padding-top: 20px;
 }
 
-li {
-    color: dimgrey;
+h5 {
+    display: inline;
+    color: lightskyblue;
     font-style: normal;
     font-family: Lobster;
     font-size: 30px;
     width:100%;
-}
-
-li:hover {
-    color: inherit;
-    text-decoration: none;
-    border-style: none;
+    padding: 0px 20px 0px 20px;
 }
 
 p {
