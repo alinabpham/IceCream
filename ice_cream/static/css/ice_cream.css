@@ -28,6 +28,7 @@ h2 {
     font-family: Lobster;
     font-size: 38px;
     width:100%;
+    text-align: center;
 }
 
 h3 {
@@ -96,6 +97,10 @@ p {
 .floated_img
 {
     float: left;
+}
+
+.pages_tab {
+    margin-left: 200px
 }
 
 .option_container {
