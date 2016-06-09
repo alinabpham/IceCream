@@ -1,29 +1,30 @@
 {%  extends 'ice_cream/base.html' %}
 {% load staticfiles %}
 {% block content %}
+    <div class="pages_margin">
+        {% if form.errors %}
+            <div class="error">
+                <strong>Incorrect or missing field. Every field is required but toppings.</strong>
+            </div>
+        {% endif %}
 
-    {% if form.errors %}
-        <div class="error">
-            <strong>Incorrect or missing field. Every field is required but toppings.</strong>
+        <div >
+            <h2>Create Your Ice Cream</h2>
         </div>
-    {% endif %}
 
-    <div >
-        <h2>Create Your Ice Cream</h2>
-    </div>
-
-    <div>
-        <form method="POST" class="post-form" style="float: left">{% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="save btn btn-default">Save</button>
-        </form>
-        <div style="float: right; margin-right: 20px; margin-bottom: 50px">
-            <img src="../../media/images/ICpics/eat2.gif" height="130 px">
-            <img src="../../media/images/ICpics/eat1.gif" height="130 px">
-        </div>
-        <div style="float: right">
-            <img src="../../media/images/ICpics/eat3.gif" height="130 px">
-            <img src="../../media/images/ICpics/eat4.gif" height="130 px">
+        <div>
+            <form method="POST" class="post-form" style="float: left">{% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="save btn btn-default">Save</button>
+            </form>
+            <div style="float: right; margin-right: 20px; margin-bottom: 50px">
+                <img src="../../media/images/ICpics/eat2.gif" height="130 px">
+                <img src="../../media/images/ICpics/eat1.gif" height="130 px">
+            </div>
+            <div style="float: right">
+                <img src="../../media/images/ICpics/eat3.gif" height="130 px">
+                <img src="../../media/images/ICpics/eat4.gif" height="130 px">
+            </div>
         </div>
     </div>
 {% endblock %}

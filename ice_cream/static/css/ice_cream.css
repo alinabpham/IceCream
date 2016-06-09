@@ -12,7 +12,8 @@
 }
 
 .pages_margin {
-    margin-left: 200px
+    margin-left: 300px;
+    margin-right: 300px;
 }
 
 a.page_link {
@@ -43,7 +44,7 @@ h2 {
     font-family: "Lobster Two";
     font-size: 32px;
     width:100%;
-    text-align: center;
+    margin-bottom: 25px;
 }
 
 h3 {
@@ -75,8 +76,8 @@ h5 {
 
 p {
     font-family: "Slabo 13px";
-    font-size: 20px;
-    color: grey;
+    font-size: 25px;
+    color: orange;
     width:100%;
 }
 
@@ -111,7 +112,7 @@ p {
 .success_image {
     display: inline-block;
     margin: 1em;
-    padding: 20px 20px;
+    padding: 15px 15px;
 }
 
 .floated_img
