@@ -19,16 +19,27 @@ class FlavorTest(TestCase):
         return Flavor.objects.create(flavor)
 
 
-class OrderFormTest(TestCase):
+class OrderTest(TestCase):
 
     def test_order_is_valid(self):
         flavor = Flavor.objects.create(flavor='Yum', image='images/flavors/Screen_Shot_2016-06-08_at_5.02.32_PM_ioctmW7.png')
         container = Container.objects.create(container='cup', image='images/containers/Screen_Shot_2016-06-08_at_5.02.32_PM_ioctmW7.png')
         topping = Topping.objects.create(topping='oreos', image='images/toppings/Screen_Shot_2016-06-08_at_5.02.32_PM_ioctmW7.png')
 
-        flavor.save()
-        container.save()
-        topping.save()
+        order = Order.objects.create(flavor=flavor, container=container, toppings=topping, name='j', address='j',
+                                     phone='j', email='meyer.alexander.john@gmail.com', order_time=now())
+        self.assertTrue(isinstance(order, Order))
+
+
+class OrderFormTest(TestCase):
+
+    def test_order_form_is_valid(self):
+        flavor = Flavor.objects.create(flavor='Yum',
+                                       image='images/flavors/Screen_Shot_2016-06-08_at_5.02.32_PM_ioctmW7.png')
+        container = Container.objects.create(container='cup',
+                                             image='images/containers/Screen_Shot_2016-06-08_at_5.02.32_PM_ioctmW7.png')
+        topping = Topping.objects.create(topping='oreos',
+                                         image='images/toppings/Screen_Shot_2016-06-08_at_5.02.32_PM_ioctmW7.png')
 
         order_data = {
             'flavor': flavor,
@@ -40,6 +51,5 @@ class OrderFormTest(TestCase):
             'email': 'meyer.alexander.john@gmail.com',
         }
 
-        order = Order.objects.create(flavor=flavor, container=container, toppings=topping, name='j', address='j',
-                                     phone='j', email='meyer.alexander.john@gmail.com', order_time=now())
-        self.assertTrue(isinstance(order, Order))
+        order = OrderForm(data=order_data)
+        self.assertTrue(isinstance(order, OrderForm))
