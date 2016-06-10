@@ -133,16 +133,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-# Suggested security settings
-
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_BROWSER_XSS_FILTER = True
-SECURE_SSL_REDIRECT = True
-CSRF_COOKIE_SECURE = True
-CSRF_COOKIE_HTTPONLY = True
-SESSION_COOKIE_SECURE = True
-
-X_FRAME_OPTIONS = 'DENY'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
