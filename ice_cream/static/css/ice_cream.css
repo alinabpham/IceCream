@@ -71,7 +71,7 @@ h5 {
 
 p {
     font-family: "Slabo 13px";
-    font-size: 25px;
+    font-size: 20px;
     color: orange;
     width:100%;
 }
@@ -144,4 +144,8 @@ p {
     display: inline-block;
     height: 100%;
     vertical-align: middle;
+}
+
+.order_layout {
+    display: inline-block;
 }

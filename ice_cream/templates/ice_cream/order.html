@@ -1,5 +1,6 @@
 {% extends 'ice_cream/base.html' %}
 {% load staticfiles %}
+
 {% block content %}
     <div class="pages_margin">
         {% if form.errors %}
@@ -10,12 +11,14 @@
         <div>
             <h2 style="text-align: center; font-size: 40px">Create Your Ice Cream</h2>
         </div>
-        <div>
-            <form method="POST" class="post-form" style="float: left">{% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit" class="save btn btn-default">Save</button>
-            </form>
-            <div style="float: right; text-align: center">
+        <div style="text-align: center">
+            <div class="order_layout" style="text-align: left">
+                <form method="POST" class="post-form">{% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="save btn btn-default">Save</button>
+                </form>
+            </div>
+            <div class="order_layout" style="text-align: center; margin-left: 10px;">
                 <div style="margin-bottom: 10px">
                     <img src="../../media/images/ICpics/eat2.gif" height="130 px">
                     <img src="../../media/images/ICpics/eat1.gif" height="130 px">
@@ -23,7 +26,7 @@
                 <div style="margin-bottom: 10px">
                     <img src="../../media/images/ICpics/eat3.gif" height="130 px">
                 </div>
-                <div>
+                <div style="margin-bottom: 15px">
                     <img src="../../media/images/ICpics/eat4.gif" height="200 px">
                 </div>
             </div>
