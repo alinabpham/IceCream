@@ -1,16 +1,15 @@
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
+from django.utils.timezone import now
 from .models import Flavor, Topping, Container
 from .forms import OrderForm
-import datetime
-
 
 def send_email_to_claire(body, name):
     email_body = 'A new order for ice cream was made by ' + name + '.\n\n' + body
     send_mail('New Order',
               email_body,
               'claires.icecream.order@gmail.com',
-              ['tech@mighty.com'],
+              ['meyer.alexander.john@gmail.com'],
               fail_silently=False
               )
 
@@ -52,7 +51,7 @@ def orderview(request):
     if request.method == "POST":
         if form.is_valid():
             order = form.save(commit=False)
-            order.order_time = datetime.datetime.now()
+            order.order_time = now()
             order.toppings = get_topping_str()
             order.save()
 

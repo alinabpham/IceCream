@@ -1,4 +1,4 @@
-{%  extends 'ice_cream/base.html' %}
+{% extends 'ice_cream/base.html' %}
 {% load staticfiles %}
 {% block content %}
     <div class="pages_margin">
@@ -15,15 +15,17 @@
                 {{ form.as_p }}
                 <button type="submit" class="save btn btn-default">Save</button>
             </form>
-            <div style="margin-bottom: 40px">
-                <img src="../../media/images/ICpics/eat2.gif" height="130 px">
-                <img src="../../media/images/ICpics/eat1.gif" height="130 px">
-            </div>
-            <div style="margin-bottom: 40px; margin-right: 100px">
-                <img src="../../media/images/ICpics/eat3.gif" height="130 px">
-            </div>
-            <div style="float: right; margin-right: 100px">
-                <img src="../../media/images/ICpics/eat4.gif" height="130 px">
+            <div style="float: right; text-align: center">
+                <div style="margin-bottom: 10px">
+                    <img src="../../media/images/ICpics/eat2.gif" height="130 px">
+                    <img src="../../media/images/ICpics/eat1.gif" height="130 px">
+                </div>
+                <div style="margin-bottom: 10px">
+                    <img src="../../media/images/ICpics/eat3.gif" height="130 px">
+                </div>
+                <div>
+                    <img src="../../media/images/ICpics/eat4.gif" height="200 px">
+                </div>
             </div>
         </div>
     </div>
