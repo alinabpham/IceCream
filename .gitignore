@@ -77,4 +77,5 @@ celerybeat-schedule
 
 # OS X
 .DS_Store
+
 practice/settings_secret.py
