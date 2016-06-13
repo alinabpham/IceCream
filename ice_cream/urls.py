@@ -11,3 +11,5 @@ urlpatterns = [
     url(r'^options/(?P<option_type>\w+)/$', views.optionview, name='option_view'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+
+
