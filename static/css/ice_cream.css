@@ -152,6 +152,8 @@ p {
 
 .contact_info {
     color: dimgray;
+    font-family: "Slabo 13px";
     font-size: 15px;
-    text-align: center
+    text-align: center;
+    margin-top: 50px;
 }
