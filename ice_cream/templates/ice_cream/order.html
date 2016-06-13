@@ -18,7 +18,7 @@
                         {% if field.errors %}
                             <p class="form-error">The following field is required</p>
                         {% endif %}
-                        <span class="form-field"> {{ field.label_tag }} {{ field }}</span>
+                        <div class="form-field"> {{ field.label_tag }} {{ field }}</div>
                         {% if field.help_text %}
                             <p class="help">{{ field.help_text|safe }}</p>
                         {% endif %}
@@ -34,7 +34,6 @@
                 <img src="../../media/images/ICpics/eat3.gif" height="130 px">
                 <img src="../../media/images/ICpics/eat4.gif" height="130 px">
             </span>
-
         </div>
     </div>
 {% endblock %}
