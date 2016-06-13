@@ -149,3 +149,9 @@ p {
 .order_layout {
     display: inline-block;
 }
+
+.contact_info {
+    color: dimgray;
+    font-size: 15px;
+    text-align: center
+}
