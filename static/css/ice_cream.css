@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 #page-wrap {
     text-align: left;
     width: 100%;
@@ -146,8 +150,13 @@ p {
     vertical-align: middle;
 }
 
-.order_layout {
+.form-container {
+    text-align: center;
+}
+
+.post-form {
     display: inline-block;
+    text-align: left;
 }
 
 .form-field {
@@ -170,3 +179,4 @@ p {
     text-align: center;
     margin-top: 50px;
 }
+
