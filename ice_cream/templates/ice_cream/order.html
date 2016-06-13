@@ -5,7 +5,7 @@
     <div class="pages_margin">
         {% if form.errors %}
             <div class="error">
-                <strong>Incorrect or missing field. Every field is required but toppings.</strong>
+                Incorrect or missing field. Every field is required but toppings.
             </div>
         {% endif %}
         <div>
@@ -14,8 +14,18 @@
         <div style="text-align: center">
             <div class="order_layout" style="text-align: left">
                 <form method="POST" class="post-form">{% csrf_token %}
-                    {{ form.as_p }}
-                    <button type="submit" class="save btn btn-default">Save</button>
+                    {% for field in form %}
+                        <div class="fieldWrapper">
+                            {% if field.errors %}
+                                <p class="form-error">The following field is required</p>
+                            {% endif %}
+                            <span class="form-field"> {{ field.label_tag }} {{ field }}</span>
+                            {% if field.help_text %}
+                                <p class="help">{{ field.help_text|safe }}</p>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                    <button type="submit" class="save btn btn-default" style="margin-top: 10px">Order</button>
                 </form>
             </div>
             <div class="order_layout" style="text-align: center; margin-left: 10px;">

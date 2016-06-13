@@ -98,10 +98,10 @@ p {
 
 .error {
     color: orangered;
-    font-family: "Lobster";
+    font-family: "Slabo 13px";
     font-size: 20px;
     width:100%;
-    margin-top: 24px;
+    margin-top: 26px;
     text-align: center;
 }
 
@@ -148,4 +148,17 @@ p {
 
 .order_layout {
     display: inline-block;
+}
+
+.form-field {
+    font-family:"Slabo 13px";
+    color: dimgray;
+    font-size: 18px;
+}
+
+.form-error {
+    color: orangered;
+    font-family: "Slabo 13px";
+    font-size: 14px;
+    margin-top: 10px;
 }
