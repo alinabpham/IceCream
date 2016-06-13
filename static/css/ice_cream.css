@@ -154,6 +154,7 @@ p {
     font-family:"Slabo 13px";
     color: dimgray;
     font-size: 18px;
+    margin-bottom: 5px;
 }
 
 .form-error {
