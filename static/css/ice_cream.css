@@ -150,7 +150,6 @@ p {
     display: inline-block;
 }
 
-
 .form-field {
     font-family:"Slabo 13px";
     color: dimgray;
@@ -162,6 +161,7 @@ p {
     font-family: "Slabo 13px";
     font-size: 14px;
     margin-top: 10px;
+}
 
 .contact_info {
     color: dimgray;
