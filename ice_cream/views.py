@@ -1,4 +1,3 @@
-from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.utils.timezone import now
 from django.views import generic
