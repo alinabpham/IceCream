@@ -1,4 +1,3 @@
-from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.utils.timezone import now
 from django.views import generic
@@ -48,7 +47,7 @@ class OrderView(generic.FormView):
         send_mail('New Order',
                   claire_email_body,
                   'claires.icecream.order@gmail.com',
-                  ['alina@mighty.com'],
+                  ['tech@mighty.com'],
                   fail_silently=False
                   )
 
