@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Order, Flavor, Topping, Container
+from .models import Order, Option
 
 
 class OrderAdmin(admin.ModelAdmin):
@@ -7,18 +7,10 @@ class OrderAdmin(admin.ModelAdmin):
     list_filter = ['order_time', 'name', 'flavor']
 
 
-class FlavorAdmin(admin.ModelAdmin):
-    list_display = ('flavor', 'image')
+class OptionAdmin(admin.ModelAdmin):
+    list_display = ('group', 'option', 'image')
 
-
-class ToppingAdmin(admin.ModelAdmin):
-    list_display = ('topping', 'image')
-
-
-class ContainerAdmin(admin.ModelAdmin):
-    list_display = ('container', 'image')
 
 admin.site.register(Order, OrderAdmin)
-admin.site.register(Flavor, FlavorAdmin)
-admin.site.register(Topping, ToppingAdmin)
-admin.site.register(Container, ContainerAdmin)
+admin.site.register(Option, OptionAdmin)
+

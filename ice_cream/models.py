@@ -3,6 +3,12 @@ from django.db import models
 from django import forms
 from django.contrib import admin
 
+OPTION_CHOICES = (
+    ('flavor', 'Flavor'),
+    ('topping', 'Topping'),
+    ('container', 'Container'),
+)
+
 
 class Order(models.Model):
     name = models.CharField(max_length=50)
@@ -18,26 +24,10 @@ class Order(models.Model):
         return 'Order date: ' + str(self.order_time)
 
 
-class Flavor(models.Model):
-    flavor = models.CharField(max_length=50)
-    image = models.ImageField(upload_to="images/flavors")
+class Option(models.Model):
+    group = models.CharField(max_length=50, choices=OPTION_CHOICES)
+    option = models.CharField(max_length=50)
+    image = models.ImageField(upload_to="images/options")
 
     def __str__(self):
-        return u'{0}'.format(self.flavor)
-
-
-class Topping(models.Model):
-    topping = models.CharField(max_length=50)
-    image = models.ImageField(upload_to="images/toppings")
-
-    def __str__(self):
-        return u'{0}'.format(self.topping)
-
-
-class Container(models.Model):
-    container = models.CharField(max_length=50)
-    image = models.ImageField(upload_to="images/containers")
-
-    def __str__(self):
-        return u'{0}'.format(self.container)
-
+        return u'{0}'.format(self.option)
