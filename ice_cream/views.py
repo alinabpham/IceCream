@@ -48,7 +48,7 @@ class OrderView(generic.FormView):
         send_mail('New Order',
                   claire_email_body,
                   'claires.icecream.order@gmail.com',
-                  ['alina@mighty.com'],
+                  ['tech@mighty.com'],
                   fail_silently=False
                   )
 
