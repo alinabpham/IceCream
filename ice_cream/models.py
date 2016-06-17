@@ -4,11 +4,11 @@ from django.db import models
 class Order(models.Model):
     name = models.CharField(max_length=50)
     address = models.CharField(max_length=100)
-    flavor = models.CharField(max_length=50)
-    toppings = models.CharField(max_length=500)
-    container = models.CharField(max_length=50)
+    flavor = models.ForeignKey('Flavor')
+    toppings = models.ManyToManyField('Topping', blank=True)
+    container = models.ForeignKey('Container')
     phone = models.CharField(max_length=12)
-    email = models.CharField(max_length=50)
+    email = models.EmailField(max_length=100)
     order_time = models.DateTimeField(blank=True)
 
     def __str__(self):

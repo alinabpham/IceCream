@@ -16,6 +16,7 @@ MODEL_TYPE_DICT = {
     Container: 'containers'
 }
 
+
 class OrderView(generic.FormView):
     form_class = OrderForm
     success_url = 'success/'
