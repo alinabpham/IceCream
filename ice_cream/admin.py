@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import Order, Option
+from .models import Order, Flavor, Topping, Container
+
+options = [Flavor, Topping, Container]
 
 
 class OrderAdmin(admin.ModelAdmin):
@@ -8,9 +10,11 @@ class OrderAdmin(admin.ModelAdmin):
 
 
 class OptionAdmin(admin.ModelAdmin):
-    list_display = ('group', 'option', 'image')
+    list_display = ('name', 'image')
 
 
 admin.site.register(Order, OrderAdmin)
-admin.site.register(Option, OptionAdmin)
+admin.site.register(options, OptionAdmin)
+
+
 

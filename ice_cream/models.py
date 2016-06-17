@@ -1,11 +1,4 @@
-from __future__ import unicode_literals
 from django.db import models
-
-OPTION_CHOICES = (
-    ('flavor', 'Flavor'),
-    ('topping', 'Topping'),
-    ('container', 'Container'),
-)
 
 
 class Order(models.Model):
@@ -19,13 +12,28 @@ class Order(models.Model):
     order_time = models.DateTimeField(blank=True)
 
     def __str__(self):
-        return 'Order date: ' + str(self.order_time)
+        return 'Order date: {}'.format(self.order_time)
 
 
-class Option(models.Model):
-    group = models.CharField(max_length=50, choices=OPTION_CHOICES)
-    option = models.CharField(max_length=50)
-    image = models.ImageField(upload_to="images/options")
+class Flavor(models.Model):
+    name = models.CharField(max_length=50)
+    image = models.ImageField(upload_to="images/flavors")
 
     def __str__(self):
-        return u'{0}'.format(self.option)
+        return '{}'.format(self.name)
+
+
+class Topping(models.Model):
+    name = models.CharField(max_length=50)
+    image = models.ImageField(upload_to="images/toppings")
+
+    def __str__(self):
+        return '{}'.format(self.name)
+
+
+class Container(models.Model):
+    name = models.CharField(max_length=50)
+    image = models.ImageField(upload_to="images/containers")
+
+    def __str__(self):
+        return '{}'.format(self.name)

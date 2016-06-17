@@ -1,7 +1,7 @@
 from django.core.mail import send_mail
 from django.utils.timezone import now
 from django.views import generic
-from .models import Option
+from .models import Flavor, Topping, Container
 from .forms import OrderForm
 
 TYPE_TAGLINE_DICT = {
@@ -10,6 +10,11 @@ TYPE_TAGLINE_DICT = {
     'containers': 'No-Brainer Containers'
 }
 
+MODEL_TYPE_DICT = {
+    Flavor: 'flavors',
+    Topping: 'toppings',
+    Container: 'containers'
+}
 
 class OrderView(generic.FormView):
     form_class = OrderForm
@@ -67,23 +72,14 @@ class OrderView(generic.FormView):
 
 class OptionView(generic.ListView):
     template_name = 'ice_cream/choices.html'
-    model = Option
 
     @property
     def get_type(self):
-        return str(self.kwargs.get('option_type'))
-
-    @property
-    def get_filter_type(self):
-        # URL is plural
-        return self.get_type[:-1]
+        return MODEL_TYPE_DICT[self.model]
 
     @property
     def get_tagline(self):
         return TYPE_TAGLINE_DICT[self.get_type]
-
-    def get_queryset(self):
-        return Option.objects.filter(group=self.get_filter_type)
 
     def get_context_data(self, **kwargs):
         context = dict()
@@ -92,3 +88,15 @@ class OptionView(generic.ListView):
         context['option_list'] = self.get_queryset()
 
         return context
+
+
+class FlavorView(OptionView):
+    model = Flavor
+
+
+class ToppingView(OptionView):
+    model = Topping
+
+
+class ContainerView(OptionView):
+    model = Container
