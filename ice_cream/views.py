@@ -1,4 +1,4 @@
-from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 from django.utils.timezone import now
 from django.views import generic
@@ -18,49 +18,44 @@ MODEL_TYPE_DICT = {
 }
 
 
-def get_topping_str(order):
+def get_topping_str(toppings):
     toppings_str = ''
-    for topping in order.toppings.all():
-        toppings_str += str(topping) + ', '
+
+    for topping in toppings:
+        toppings_str += '{}, '.format(topping)
     toppings_str = toppings_str[:-2]
 
     return toppings_str
 
 
-def email_to_customer(order):
+def get_email_context(order, toppings):
     context = {
         'name': order.name,
         'flavor': order.flavor,
-        'toppings': get_topping_str(order),
+        'toppings': toppings,
         'container': order.container,
     }
+    return context
 
+
+def send_email(to_list, subject, message, sender="claires.icecream.order@gmail.com"):
+    msg = EmailMessage(subject, message, sender, to_list)
+    msg.content_subtype = "html"
+    return msg.send()
+
+
+def email_to_customer(order, toppings):
+    context = get_email_context(order, toppings)
     message = render_to_string('ice_cream/email_to_customer.html', context)
 
-    send_mail('Your Order',
-              message,
-              'claires.icecream.order@gmail.com',
-              [order.email],
-              fail_silently=False
-              )
+    send_email([order.email], 'Your Order', message)
 
 
-def email_to_claire(order):
-    context = {
-        'name': order.name,
-        'flavor': order.flavor,
-        'toppings': get_topping_str(order),
-        'container': order.container,
-    }
-
+def email_to_claire(order, toppings):
+    context = get_email_context(order, toppings)
     message = render_to_string('ice_cream/email_to_claire.html', context)
 
-    send_mail('New Order',
-              message,
-              'claires.icecream.order@gmail.com',
-              ['meyer.alexander.john@gmail.com'],
-              fail_silently=False
-              )
+    send_email(['meyer.alexander.john@gmail.com'], 'New Order', message)
 
 
 class OrderView(generic.FormView):
@@ -73,8 +68,11 @@ class OrderView(generic.FormView):
         order.order_time = now()
         order.save()
 
-        email_to_customer(order)
-        email_to_claire(order)
+        toppings = form.cleaned_data.get('toppings')
+        toppings = get_topping_str(toppings)
+
+        email_to_customer(order, toppings)
+        email_to_claire(order, toppings)
 
         return super().form_valid(form)
 

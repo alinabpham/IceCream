@@ -1,12 +1,16 @@
 {% extends 'ice_cream/email_base.html' %}
 
 {% block intro %}
-    <span>{{ name }},</span>
-    <span> Thank you for ordering from Claire's Creamery! Your order details are as follows:</span>
+    <div>{{ name }},</div>
+    <br>
+    <div> Thank you for ordering from Claire's Creamery! Your order details are as follows:</div>
+    <br>
 {% endblock %}
 
 {% block outro %}
-    <span>Let us know if there are any issues, but mostly, enjoy that ice cream!</span>
-    <span>Your sweet tooth savior,</span>
-    <span>Claire's Creamery</span>
+    <br>
+    <div>Let us know if there are any issues, but mostly, enjoy that ice cream!</div>
+    <br>
+    <div>Your sweet tooth savior,</div>
+    <div>Claire's Creamery</div>
 {% endblock %}
