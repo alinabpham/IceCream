@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email</title>
+</head>
+<body>
+    <div>
+        {% block intro %}
+        {% endblock  %}
+    </div>
+    <div>
+        <span>Flavor: {{ flavor }}</span>
+        {% if toppings %}
+            <span>Toppings: {{ toppings }}</span>
+        {% endif %}
+        <span>Container: {{ container }}</span>
+    </div
+    <div>
+        {% block outro %}
+        {% endblock %}
+    </div>
+</body>
+</html>
