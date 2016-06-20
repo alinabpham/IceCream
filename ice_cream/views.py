@@ -46,14 +46,14 @@ def send_email(to_list, subject, message, sender="claires.icecream.order@gmail.c
 
 def email_to_customer(order, toppings):
     context = get_email_context(order, toppings)
-    message = render_to_string('ice_cream/email_to_customer.html', context)
+    message = render_to_string('email_to_customer.html', context)
 
     send_email([order.email], 'Your Order', message)
 
 
 def email_to_claire(order, toppings):
     context = get_email_context(order, toppings)
-    message = render_to_string('ice_cream/email_to_claire.html', context)
+    message = render_to_string('email_to_claire.html', context)
 
     send_email(['meyer.alexander.john@gmail.com'], 'New Order', message)
 
@@ -61,7 +61,7 @@ def email_to_claire(order, toppings):
 class OrderView(generic.FormView):
     form_class = OrderForm
     success_url = 'success/'
-    template_name = 'ice_cream/order.html'
+    template_name = 'order.html'
 
     def form_valid(self, form):
         order = form.save(commit=False)
@@ -78,7 +78,7 @@ class OrderView(generic.FormView):
 
 
 class OptionView(generic.ListView):
-    template_name = 'ice_cream/choices.html'
+    template_name = 'choices.html'
 
     @property
     def get_type(self):
