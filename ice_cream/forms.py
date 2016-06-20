@@ -3,7 +3,7 @@ from .models import Order, Topping
 
 
 class OrderForm(forms.ModelForm):
-    toppings = forms.ModelMultipleChoiceField(queryset=Topping.objects.all(), widget=forms.CheckboxSelectMultiple)
+    toppings = forms.ModelMultipleChoiceField(queryset=Topping.objects.all(), widget=forms.CheckboxSelectMultiple, required=False)
 
     class Meta:
         model = Order

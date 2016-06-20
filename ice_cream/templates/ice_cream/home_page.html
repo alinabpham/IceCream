@@ -9,8 +9,12 @@
             <h2> Order ice cream online without waiting in line</h2>
         </div>
         <div>
-            <p><a class="page_link" href="{% url 'order_view' %}">Click here to order now</a></p>
-            <img class="img-top-space" src="{% static 'img/eating/eat7.gif' %}">
+            <div>
+                <a class="order-link" href="{% url 'order_view' %}">Click here to order now</a>
+            </div>
+            <div>
+                <img class="img-top-space" src="{% static 'img/eating/eat7.gif' %}">
+            </div>
         </div>
     </div>
 {% endblock %}
