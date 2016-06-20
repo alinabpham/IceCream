@@ -38,17 +38,13 @@ def send_email(to_list, subject, message, sender="claires.icecream.order@gmail.c
     return msg.send()
 
 
-def email_to_customer(order, toppings):
-    context = get_email_context(order, toppings)
+def email_to_customer(email, context):
     message = render_to_string('email_to_customer.html', context)
+    send_email([email], 'Your Order', message)
 
-    send_email([order.email], 'Your Order', message)
 
-
-def email_to_claire(order, toppings):
-    context = get_email_context(order, toppings)
+def email_to_claire(context):
     message = render_to_string('email_to_claire.html', context)
-
     send_email(['meyer.alexander.john@gmail.com'], 'New Order', message)
 
 
@@ -65,8 +61,9 @@ class OrderView(generic.FormView):
         toppings = form.cleaned_data.get('toppings')
         toppings = get_topping_str(toppings)
 
-        email_to_customer(order, toppings)
-        email_to_claire(order, toppings)
+        email_context = get_email_context(order, toppings)
+        email_to_customer(order.email, email_context)
+        email_to_claire(email_context)
 
         return super().form_valid(form)
 
