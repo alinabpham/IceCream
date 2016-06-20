@@ -2,20 +2,20 @@
 {% load staticfiles %}
 
 {% block content %}
-    <div class="pages_margin" style="text-align: center">
-        <h2 style="margin-top: 25px; font-size: 40px">Success!</h2>
+    <div class="pages_margin">
+        <h2 class="success-title">Success!</h2>
         <div>
             <p> You have successfully ordered your ice cream!</p>
             <p> An email will arrive shortly with confirmation of your order.</p>
         </div>
 
         <div>
-            <img src="../../../static/img/success/goodjob.png" class="success_image" alt="yay!" height="200px" />
-            <img src="../../../static/img/success/success1.gif" class="success_image" alt="yay!" height="200px" />
-            <img src="../../../static/img/success/success2.gif" class="success_image" alt="yay!" height="200px" />
-            <img src="../../../static/img/success/success3.gif" class="success_image" alt="yay!" height="200px" />
-            <img src="../../../static/img/success/success4.gif" class="success_image" alt="yay!" height="200px"/>
-            <img src="../../../static/img/success/success5.gif" class="success_image" alt="yay!" height="200px"/>
+            <img src="{% static 'img/success/goodjob.png' %}" class="success_image" alt="yay!"/>
+            <img src="{% static 'img/success/success1.gif' %}" class="success_image" alt="yay!"/>
+            <img src="{% static 'img/success/success2.gif' %}" class="success_image" alt="yay!"/>
+            <img src="{% static 'img/success/success3.gif' %}" class="success_image" alt="yay!"/>
+            <img src="{% static 'img/success/success4.gif' %}" class="success_image" alt="yay!"/>
+            <img src="{% static 'img/success/success5.gif' %}" class="success_image" alt="yay!"/>
         </div>
     </div>
 {% endblock %}

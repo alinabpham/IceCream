@@ -9,7 +9,7 @@
             </div>
         {% endif %}
         <div>
-            <h2 style="text-align: center; font-size: 40px">Create Your Ice Cream</h2>
+            <h2 class="order-title">Create Your Ice Cream</h2>
         </div>
         <div class="form-container">
             <form method="POST" class="post-form">{% csrf_token %}
@@ -24,15 +24,15 @@
                         {% endif %}
                     </div>
                 {% endfor %}
-                <button type="submit" class="save btn btn-default" style="margin-top: 10px">Order</button>
+                <button type="submit" class="save btn btn-default" class="img-top-space">Order</button>
             </form>
         </div>
-        <div style="text-align: center; margin-top: 15px; margin-bottom: 10px">
+        <div class="order-img-bar">
             <span>
-                <img src="{% static 'img/eating/eat2.gif'%}" height="130 px">
-                <img src="{% static 'img/eating/eat1.gif'%}" height="130 px">
-                <img src="{% static 'img/eating/eat3.gif'%}" height="130 px">
-                <img src="{% static 'img/eating/eat4.gif'%}" height="130 px">
+                <img class="order-img" src="{% static 'img/eating/eat2.gif'%}" >
+                <img class="order-img" src="{% static 'img/eating/eat1.gif'%}">
+                <img class="order-img" src="{% static 'img/eating/eat3.gif'%}">
+                <img class="order-img" src="{% static 'img/eating/eat4.gif'%}">
             </span>
         </div>
     </div>

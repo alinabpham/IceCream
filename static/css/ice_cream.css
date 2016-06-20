@@ -18,6 +18,7 @@
 .pages_margin {
     margin-left: 200px;
     margin-right: 200px;
+    text-align: center;
 }
 
 a.page_link {
@@ -80,6 +81,11 @@ p {
     width:100%;
 }
 
+.base-body {
+    min-width: 960px;
+    margin-bottom: 25px;
+}
+
 .header_img_left {
     padding-right: 15px;
 }
@@ -100,6 +106,10 @@ p {
     border-style: none;
 }
 
+.img-top-space {
+    margin-top: 10px;
+}
+
 .error {
     color: orangered;
     font-family: "Slabo 13px";
@@ -113,6 +123,17 @@ p {
     display: inline-block;
     margin: 1em;
     padding: 15px 15px;
+    height: 200px;
+}
+
+.success-title {
+    margin-top: 25px;
+    font-size: 40px;
+}
+
+.order-title {
+    text-align: center;
+    font-size: 40px;
 }
 
 .floated_img
@@ -137,6 +158,10 @@ p {
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
+}
+
+.center-norm {
+    text-align: center;
 }
 
 .centered {
@@ -181,3 +206,12 @@ p {
     margin-top: 50px;
 }
 
+.order-img {
+    height: 130px;
+}
+
+.order-img-bar {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
