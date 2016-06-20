@@ -181,6 +181,7 @@ p {
 
 .form-container {
     text-align: center;
+    margin-top: 30px;
 }
 
 .post-form {
@@ -189,9 +190,10 @@ p {
 }
 
 .form-field {
-    font-family:"Slabo 13px";
+    font-family:"Courgette";
+    font-weight: lighter;
     color: dimgray;
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 8px;
 }
 
@@ -204,8 +206,8 @@ p {
 
 .contact_info {
     color: dimgray;
-    font-family: "Slabo 13px";
-    font-size: 15px;
+    font-family: "Courgette";
+    font-size: 18px;
     text-align: center;
     margin-top: 50px;
 }
@@ -216,9 +218,13 @@ p {
 
 .order-img {
     height: 130px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: inline-block;
 }
 
 .order-img-bar {
+    min-width: 960px;
     text-align: center;
     margin-top: 45px;
     margin-bottom: 10px;
