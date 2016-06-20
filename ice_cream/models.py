@@ -1,5 +1,4 @@
 from django.db import models
-<<<<<<< HEAD
 
 
 OPTION_CHOICES = (
@@ -7,8 +6,6 @@ OPTION_CHOICES = (
     ('topping', 'Topping'),
     ('container', 'Container'),
 )
-=======
->>>>>>> origin/master
 
 
 class Order(models.Model):

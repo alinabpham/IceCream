@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-from django.core.mail import send_mail
-=======
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
->>>>>>> origin/master
 from django.utils.timezone import now
 from django.views import generic
 from .models import Flavor, Topping, Container
@@ -62,20 +58,8 @@ class OrderView(generic.FormView):
         order.order_time = now()
         order.save()
 
-<<<<<<< HEAD
-        body = make_order_body()
-
-        claire_email_body = 'A new order for ice cream was made by ' + order.name + '.\n\n' + body
-        send_mail('New Order',
-                  claire_email_body,
-                  'claires.icecream.order@gmail.com',
-                  ['tech@mighty.com'],
-                  fail_silently=False
-                  )
-=======
         toppings = form.cleaned_data.get('toppings')
         toppings = get_topping_str(toppings)
->>>>>>> origin/master
 
         email_context = get_email_context(order, toppings)
         email_to_customer(order.email, email_context)
