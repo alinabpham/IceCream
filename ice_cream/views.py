@@ -6,15 +6,9 @@ from .models import Flavor, Topping, Container
 from .forms import OrderForm
 
 TYPE_TAGLINE_DICT = {
-    'flavors': 'Flavors to Savor',
-    'toppings': "Poppin' Toppin's",
-    'containers': 'No-Brainer Containers'
-}
-
-MODEL_TYPE_DICT = {
-    Flavor: 'flavors',
-    Topping: 'toppings',
-    Container: 'containers'
+    'Flavor': 'Flavors to Savor',
+    'Topping': "Poppin' Toppin's",
+    'Container': 'No-Brainer Containers'
 }
 
 
@@ -82,7 +76,7 @@ class OptionView(generic.ListView):
 
     @property
     def get_type(self):
-        return MODEL_TYPE_DICT[self.model]
+        return self.model.__name__
 
     @property
     def get_tagline(self):
@@ -90,7 +84,7 @@ class OptionView(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = dict()
-        context['option_type_cap'] = self.get_type.capitalize()
+        context['option_type_cap'] = '{}s'.format(self.get_type)
         context['tagline'] = self.get_tagline
         context['option_list'] = self.get_queryset()
 
