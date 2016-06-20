@@ -78,4 +78,8 @@ celerybeat-schedule
 # OS X
 .DS_Store
 
+# secret key
 practice/settings_secret.py
+
+# media
+ice_cream/media/*
