@@ -18,24 +18,24 @@
         <div class="page-header">
             <span>
                 <h1>
-                    <img src="{% static 'img/ice_creams/icecream4.png' %}" class="header_img_left" alt="some ice cream" height="125px"/>
-                    <a href="{% url 'home_view' %}" class="home_title">Claire's Creamery</a>
-                    <img src="{% static 'img/ice_creams/icecream4.png' %}" class="header_img_right" alt="some ice cream" height="125px"/>
+                    <img class="header-img-left" src="{% static 'img/ice_creams/icecream4.png' %}" alt="some ice cream" height="125px"/>
+                    <a class="home-title" href="{% url 'home_view' %}">Claire's Creamery</a>
+                    <img class="header-img-right" src="{% static 'img/ice_creams/icecream4.png' %}" alt="some ice cream" height="125px"/>
                 </h1>
             </span>
         </div>
         <div class="center-norm">
-            <h5><a class="page_link" href="{% url 'home_view' %}">Home</a></h5>
-            <h5><a class="page_link" href="{% url 'flavor_view' %}">Flavors</a></h5>
-            <h5><a class="page_link" href="{% url 'topping_view' %}">Toppings</a></h5>
-            <h5><a class="page_link" href="{% url 'container_view' %}">Containers</a></h5>
-            <h5><a class="page_link" href="{% url 'order_view' %}">Order</a></h5>
+            <h5><a class="page-link" href="{% url 'home_view' %}">Home</a></h5>
+            <h5><a class="page-link" href="{% url 'flavor_view' %}">Flavors</a></h5>
+            <h5><a class="page-link" href="{% url 'topping_view' %}">Toppings</a></h5>
+            <h5><a class="page-link" href="{% url 'container_view' %}">Containers</a></h5>
+            <h5><a class="page-link" href="{% url 'order_view' %}">Order</a></h5>
         </div>
         <div>
             {% block content %}
             {% endblock %}
         </div>
-        <div class="contact_info">
+        <div class="contact-info">
             Contact us: tech@mighty.com
         </div>
     </div>
