@@ -9,8 +9,8 @@
             <h2> Order ice cream online without waiting in line</h2>
         </div>
         <div>
-            <p><a class="page_link" href="order/">Click here to order now</a></p>
-            <img style="margin-top: 10px" src="../../media/images/ICpics/eat7.gif"/>
+            <p><a class="page_link" href="{% url 'order_view' %}">Click here to order now</a></p>
+            <img style="margin-top: 10px" src="{% static 'img/eating/eat7.gif' %}"
         </div>
     </div>
 {% endblock %}
