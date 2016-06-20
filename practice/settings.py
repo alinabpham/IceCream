@@ -56,7 +56,7 @@ ROOT_URLCONF = 'practice.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'ice_cream/templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'ice_cream/templates/ice_cream')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,22 +1,22 @@
 from django.test import TestCase
 from .forms import OrderForm
-from .models import Flavor, Container, Topping, Order
-from django.contrib.auth.models import User
+from .models import Option, Order
 from django.utils.timezone import now
 
+# TESTS ARE DEFUNCT, MUST CHANGE
 
 # models test
-class FlavorTest(TestCase):
+class OptionTest(TestCase):
 
-    def create_flavor(self, flavor='Yum', image='images/flavors/Screen_Shot_2016-06-08_at_5.02.32_PM_ioctmW7.png'):
-        return Flavor.objects.create(flavor=flavor, image=image)
+    def create_option(self, flavor='Yum', image='images/flavors/Screen_Shot_2016-06-08_at_5.02.32_PM_ioctmW7.png'):
+        return Option.objects.create(group=flavor, image=image)
 
     def test_flavor_creation(self):
-        flav = self.create_flavor()
-        self.assertTrue(isinstance(flav, Flavor))
+        flav = self.create_option()
+        self.assertTrue(isinstance(flav, Option))
 
-    def create_wrong_flavor(self, flavor='Yum', image='images/flavors/Screen_Shot_2016-06-08_at_5.02.32_PM_ioctmW7.png'):
-        return Flavor.objects.create(flavor)
+    def create_wrong_option(self, flavor='Yum', image='images/flavors/Screen_Shot_2016-06-08_at_5.02.32_PM_ioctmW7.png'):
+        return Option.objects.create(flavor)
 
 
 class OrderTest(TestCase):

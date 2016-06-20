@@ -1,5 +1,5 @@
-from __future__ import unicode_literals
 from django.db import models
+<<<<<<< HEAD
 
 
 OPTION_CHOICES = (
@@ -7,26 +7,43 @@ OPTION_CHOICES = (
     ('topping', 'Topping'),
     ('container', 'Container'),
 )
+=======
+>>>>>>> origin/master
 
 
 class Order(models.Model):
     name = models.CharField(max_length=50)
     address = models.CharField(max_length=100)
-    flavor = models.CharField(max_length=50)
-    toppings = models.CharField(max_length=500)
-    container = models.CharField(max_length=50)
+    flavor = models.ForeignKey('Flavor')
+    toppings = models.ManyToManyField('Topping', blank=True)
+    container = models.ForeignKey('Container')
     phone = models.CharField(max_length=12)
-    email = models.CharField(max_length=50)
+    email = models.EmailField(max_length=100)
     order_time = models.DateTimeField(blank=True)
 
     def __str__(self):
-        return 'Order date: ' + str(self.order_time)
+        return 'Order date: {}'.format(self.order_time)
 
 
-class Option(models.Model):
-    group = models.CharField(max_length=50, choices=OPTION_CHOICES)
-    option = models.CharField(max_length=50)
-    image = models.ImageField(upload_to="images/options")
+class Flavor(models.Model):
+    name = models.CharField(max_length=50)
+    image = models.ImageField(upload_to="images/flavors")
 
     def __str__(self):
-        return u'{0}'.format(self.option)
+        return '{}'.format(self.name)
+
+
+class Topping(models.Model):
+    name = models.CharField(max_length=50)
+    image = models.ImageField(upload_to="images/toppings")
+
+    def __str__(self):
+        return '{}'.format(self.name)
+
+
+class Container(models.Model):
+    name = models.CharField(max_length=50)
+    image = models.ImageField(upload_to="images/containers")
+
+    def __str__(self):
+        return '{}'.format(self.name)

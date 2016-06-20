@@ -5,17 +5,20 @@
 
     <div>
         {% if form.errors %}
-            <div class="error">
+            <div class="form-error-top">
                 Incorrect or missing field. Every field is required but toppings.
             </div>
         {% endif %}
         <div>
-            <h2 style="text-align: center; font-size: 40px">Create Your Ice Cream</h2>
+            <h4>Order</h4>
+        </div>
+        <div>
+            <h2 class="center-norm">Create Your Own Ice Cream</h2>
         </div>
         <div class="form-container">
             <form method="POST" class="post-form">{% csrf_token %}
                 {% for field in form %}
-                    <div class="fieldWrapper">
+                    <div>
                         {% if field.errors %}
                             <p class="form-error">The following field is required</p>
                         {% endif %}
@@ -25,16 +28,14 @@
                         {% endif %}
                     </div>
                 {% endfor %}
-                <button type="submit" class="save btn btn-default" style="margin-top: 10px">Order</button>
+                <button type="submit" class="save btn btn-default">Order</button>
             </form>
         </div>
-        <div style="text-align: center; margin-top: 15px; margin-bottom: 10px">
-            <span>
-                <img src="../../media/images/ICpics/eat2.gif" height="130 px">
-                <img src="../../media/images/ICpics/eat1.gif" height="130 px">
-                <img src="../../media/images/ICpics/eat3.gif" height="130 px">
-                <img src="../../media/images/ICpics/eat4.gif" height="130 px">
-            </span>
+        <div class="order-img-bar">
+            <img class="order-img" src="{% static 'img/eating/eat2.gif'%}" >
+            <img class="order-img" src="{% static 'img/eating/eat1.gif'%}">
+            <img class="order-img" src="{% static 'img/eating/eat3.gif'%}">
+            <img class="order-img" src="{% static 'img/eating/eat4.gif'%}">
         </div>
     </div>
 

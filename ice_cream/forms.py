@@ -1,12 +1,9 @@
 from django import forms
-from .models import Order, Option
+from .models import Order, Topping
 
 
 class OrderForm(forms.ModelForm):
-    flavor = forms.ModelChoiceField(queryset=Option.objects.all().filter(group='flavor'))
-    toppings = forms.ModelMultipleChoiceField(queryset=Option.objects.all().filter(group='topping'), widget=forms.CheckboxSelectMultiple, required=False)
-    container = forms.ModelChoiceField(queryset=Option.objects.all().filter(group='container'))
-    email = forms.EmailField()
+    toppings = forms.ModelMultipleChoiceField(queryset=Topping.objects.all(), widget=forms.CheckboxSelectMultiple, required=False)
 
     class Meta:
         model = Order

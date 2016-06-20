@@ -2,18 +2,16 @@
 {% load staticfiles %}
 
 {% block content %}
-
-    <div class="page">
+    <div>
         <h4> {{ option_type_cap }}</h4>
-        <h2 style="text-align: center"> {{ tagline }}</h2>
-        <div style="text-align: center">
-            {% for item in option_list %}
-                <div class="option_container">
-                    <span class="centerer"></span><span class='centered'><img src="{{ MEDIA_URL }}{{ item.image }}"></span>
-                    <h3> {{ item.option }}</h3>
+        <h2 class="center-norm"> {{ tagline }}</h2>
+        <div class="center-norm">
+            {% for option in option_list %}
+                <div class="option-container">
+                    <span ></span><span class='centered'><img src="{{ MEDIA_URL }}{{ option.image }}"></span>
+                    <h3> {{ option.name }}</h3>
                 </div>
             {% endfor %}
         </div>
     </div>
-
 {% endblock %}

@@ -4,13 +4,17 @@
     <div>
         <h4>Welcome to Claire's Creamery!</h4>
     </div>
-    <div style="text-align: center">
+    <div class="center-norm">
         <div>
             <h2> Order ice cream online without waiting in line</h2>
         </div>
         <div>
-            <p><a class="page_link" href="order/">Click here to order now</a></p>
-            <img style="margin-top: 10px" src="../../media/images/ICpics/eat7.gif"/>
+            <div>
+                <a class="order-link" href="{% url 'order_view' %}">Click here to order now</a>
+            </div>
+            <div>
+                <img class="img-top-space" src="{% static 'img/eating/eat7.gif' %}">
+            </div>
         </div>
     </div>
 {% endblock %}
